@@ -1,0 +1,29 @@
+<script runat="server">
+
+Platform.Load("core","1.1.5");
+
+try {
+</script>
+
+%%[
+
+  SET @subKey = QueryParameter("subkey")
+  SET @email = QueryParameter("email")
+  
+  /*
+  SET @subKey = "lhiggins@convergeone.com"
+  SET @email = "lhiggins@convergeone.com"
+*/
+insertData('Clicked on a CloudPage Link','SubKey',@subKey,'Email',@email)
+
+Redirect("https://www.lesleyhiggins.com/")
+
+ENDIF
+]%%
+
+<script runat="server">
+} catch (e) {
+  Write("<br>" + Stringify(e))
+}
+
+</script>
